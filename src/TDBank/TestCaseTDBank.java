@@ -14,7 +14,7 @@ public class TestCaseTDBank {
 
 
     WebDriver driver;
-    String tdbankurl ="https://www.td.com/us/en/personal-banking/online-banking/";
+    String tdbankurl = "https://www.td.com/us/en/personal-banking/online-banking/";
 
 
     @BeforeMethod
@@ -31,33 +31,28 @@ public class TestCaseTDBank {
 
 
     // Test 1:
-   @Test(enabled = false)
-   public void checktdBankUrl() throws InterruptedException {
-    driver.get(tdbankurl);
-    System.out.println("We Are Now Testing: " + driver.getCurrentUrl());
-    String expectedTdBankUrl=  "https://www.td.com/us/en/personal-banking/online-banking/";
-    String actualTdBankUrl= driver.getCurrentUrl();
-    //Validate Links
-    Assert.assertEquals(actualTdBankUrl,expectedTdBankUrl , "Test Failed, Link Does Not Match");
-    Thread.sleep(3000);
-}
-
-
-
-
+    @Test(enabled = false)
+    public void checktdBankUrl() throws InterruptedException {
+        driver.get(tdbankurl);
+        System.out.println("We Are Now Testing: " + driver.getCurrentUrl());
+        String expectedTdBankUrl = "https://www.td.com/us/en/personal-banking/online-banking/";
+        String actualTdBankUrl = driver.getCurrentUrl();
+        //Validate Links
+        Assert.assertEquals(actualTdBankUrl, expectedTdBankUrl, "Test Failed, Link Does Not Match");
+        Thread.sleep(3000);
+    }
 
 
     //test2
     @Test(enabled = false)
     public void checkHomePageTitle() throws InterruptedException {
-       driver.get(tdbankurl);
+        driver.get(tdbankurl);
         String expectedTitle = "Safe and secure Online Banking from TD Bank | TD Bank";
         String actualTitle = driver.getTitle();
         // Validation
         Assert.assertEquals(actualTitle, expectedTitle, "Test Fail: Title does not match");
         Thread.sleep(5000);
     }
-
 
 
     //test 3:( test failed)
@@ -72,10 +67,10 @@ public class TestCaseTDBank {
     }
 
 
-//Test 4:
+    //Test 4:
     @Test(enabled = false)
     public void checkProduct() throws InterruptedException {
-       // driver.get(tdbankurl);
+        // driver.get(tdbankurl);
         driver.findElement(By.id("td-desktop-nav-dropdown-link-2")).sendKeys("Products");
         Thread.sleep(3000);
         //validation:
@@ -83,42 +78,43 @@ public class TestCaseTDBank {
         String actualText = driver.findElement(By.xpath("//*[@id=\"td-desktop-nav-dropdown-link-2\"]")).getText();
         Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
     }
+
     //Test 5:
     @Test(enabled = false)
     public void checkService() throws InterruptedException {
         driver.findElement(By.id("td-desktop-nav-dropdown-link-3")).sendKeys("Services");
         Thread.sleep(3000);
         //validation:
-       String expectedText = "Services";
-       String actualText = driver.findElement(By.xpath("//*[@id=\"td-desktop-nav-dropdown-link-3\"]")).getText();
-     // Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
+        String expectedText = "Services";
+        String actualText = driver.findElement(By.xpath("//*[@id=\"td-desktop-nav-dropdown-link-3\"]")).getText();
+        // Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
 
     }
 
     //Test 6:
-  @Test(enabled = false)
-   public void checkLogin() throws InterruptedException {
+    @Test(enabled = false)
+    public void checkLogin() throws InterruptedException {
 
-      driver.findElement(By.id("td-desktop-nav-dropdown-link-4")).sendKeys("Log In");
-      Thread.sleep(3000);
-      //validation:
-      String expectedText = "Log In";
-      String actualText = driver.findElement(By.xpath("//*[@id=\"td-desktop-nav-dropdown-link-4\"]")).getText();
-      Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
+        driver.findElement(By.id("td-desktop-nav-dropdown-link-4")).sendKeys("Log In");
+        Thread.sleep(3000);
+        //validation:
+        String expectedText = "Log In";
+        String actualText = driver.findElement(By.xpath("//*[@id=\"td-desktop-nav-dropdown-link-4\"]")).getText();
+        Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
 
-  }
- // Test 7:
-    @Test(enabled = false )
+    }
+
+    // Test 7:
+    @Test(enabled = false)
     public void checkPersonal() throws InterruptedException {
 
         driver.findElement(By.xpath("/html/body/div[2]/div[2]/header[1]/div[2]/div/div[1]/div/ul/li[1]")).click();
         Thread.sleep(3000);
-      //  validation:
+        //  validation:
         String expectedText = "Personal";
         String actualText = driver.findElement(By.xpath("//li[@class='active']")).getText();
         Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
     }
-
 
 
     // Test 8:
@@ -135,10 +131,10 @@ public class TestCaseTDBank {
         driver.findElement(By.xpath("//*[@id=\"loginForm\"]/button")).click();
 
 
-
     }
+
     // Test 9:
-    @Test(enabled = false )
+    @Test(enabled = false)
     public void checkCreditCardSignUp() throws InterruptedException {
         String expectedTitle = "https://www.tdcardservices.com/?product=TDBANK";
         driver.get("https://www.tdcardservices.com/?product=TDBANK");
@@ -157,10 +153,8 @@ public class TestCaseTDBank {
     }
 
 
-
-
-  // Test 10:
-    @Test(enabled = false )
+    // Test 10:
+    @Test(enabled = false)
     public void checkTextEnrollInOnlineBanking() throws InterruptedException {
 
         driver.findElement(By.cssSelector("#ba_1_title > span")).click();
@@ -175,7 +169,7 @@ public class TestCaseTDBank {
 
     // Test 11:
     @Test(enabled = false)
-    public void checkLoanLineOfCredit () throws InterruptedException {
+    public void checkLoanLineOfCredit() throws InterruptedException {
         String expectedTitle = "https://onlinebanking.tdbank.com/#/settings/productServices";
         driver.get("https://onlinebanking.tdbank.com/#/settings/productServices");
 
@@ -204,7 +198,7 @@ public class TestCaseTDBank {
     }
 
 
-   // Test 12:
+    // Test 12:
     @Test(enabled = false)
     public void checkForAndroidDevices() throws InterruptedException {
 
@@ -213,7 +207,7 @@ public class TestCaseTDBank {
         Thread.sleep(3000);
 
 
-        //  validation:
+        //Validation:
         String expectedText = "For AndroidTM devices†";
         String actualText = driver.findElement(By.xpath("//*[@id=\"product1_item1\"]/div/div[2]/div[4]/div/button ")).getText();
         Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
@@ -222,7 +216,7 @@ public class TestCaseTDBank {
 
     //Test 13:
     @Test(enabled = false)
-    public void checkTransferAndSendMoney () throws InterruptedException {
+    public void checkTransferAndSendMoney() throws InterruptedException {
 
         driver.get(tdbankurl);
         driver.findElement(By.cssSelector("#Tab_2 > div.td-tabs-carousel-tab-content > h4")).click();
@@ -242,7 +236,6 @@ public class TestCaseTDBank {
         driver.get("https://www.td.com/us/en/personal-banking/student-services/");
 
 
-
         driver.findElement(By.id("td-desktop-nav-dropdown-link-3")).sendKeys("Services");
         Thread.sleep(3000);
 
@@ -258,7 +251,7 @@ public class TestCaseTDBank {
     }
 
     //Test 15:
-    @Test(enabled = false )
+    @Test(enabled = false)
     public void checkStatementAndNotices() throws InterruptedException {
         driver.get(tdbankurl);
 
@@ -285,8 +278,6 @@ public class TestCaseTDBank {
         String actualText = driver.findElement(By.xpath("//*[@id=\"Tab_5\"]/div[1]/h4")).getText();
         Assert.assertEquals(actualText, expectedText, "Test Fail: Search keyword does not match");
     }
-
-
 
 
     //Test 17:
@@ -355,7 +346,6 @@ public class TestCaseTDBank {
     }
 
 
-
     @Test(enabled = true)
     public void checkLearnMoreAboutSmallBusinessOnlineBanking() throws InterruptedException {
         driver.get(tdbankurl);
@@ -374,10 +364,9 @@ public class TestCaseTDBank {
 
 
     @AfterMethod
-        public void tearDown () {
-            //driver.close();
-            driver.quit();
-        }
-//
-//
+    public void tearDown() {
+        //driver.close();
+        driver.quit();
     }
+
+}
